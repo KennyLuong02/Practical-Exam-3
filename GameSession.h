@@ -55,7 +55,15 @@ vector<GridUnit*> GameSession::initGameSession(int numAvatars, int numObstacles,
 void GameSession::gameCycle(int maxCycles, double obstacleActivationDistance) {
     for (int i = 0; i < maxCycles; i++) {
         int numAvatarsLeft = 0;
-        
+        for (int j = 0; j < (int)size(grid); j++) {
+            if (grid[j]->getEntity() == 'N') {
+                numAvatarsLeft++;
+            }
+
+            // if(grid[j]->getEntity() == "O") {
+            //     // (Obstacle*)(grid[j])
+            // }
+        }
     }
 }
 
