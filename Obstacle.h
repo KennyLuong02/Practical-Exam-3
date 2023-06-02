@@ -20,15 +20,17 @@ class Obstacle: public GridUnit, Modifier {
 };
 
 Obstacle::Obstacle(): GridUnit(0, 0, 'O') {
+    active = true;
 }
 Obstacle::Obstacle(int x, int y): GridUnit(x, y, 'O') {
+    active = true;
 }
 
 void Obstacle::apply(GridUnit& unit) {
-    if (isActive() == true) {
+    // if (isActive() == true) {
         // active = false;
         unit.setEntity('O');
-    }
+    // }
 }
 
 bool Obstacle::isActive() {
