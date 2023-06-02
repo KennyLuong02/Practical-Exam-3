@@ -19,8 +19,8 @@ class Helper {
 
 std::tuple<int, int> Helper::generateRandomCoordinates(int gridWidth, int gridHeight) {
     std::tuple<int, int> coordinates;
-    std::get<0>(coordinates) = rand() % gridWidth;
-    std::get<1>(coordinates) = rand() % gridHeight;
+    std::get<0>(coordinates) = rand() % gridHeight;
+    std::get<1>(coordinates) = rand() % gridWidth;
     return coordinates;
 
 }

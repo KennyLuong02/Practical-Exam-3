@@ -28,7 +28,7 @@ Obstacle::Obstacle(int x, int y): GridUnit(x, y, 'O') {
 
 void Obstacle::apply(GridUnit& unit) {
     // if (isActive() == true) {
-        // active = false;
+        active = false;
         unit.setEntity('O');
     // }
 }
