@@ -13,18 +13,22 @@ class GameSession {
         GameSession();
         vector<GridUnit*> initGameSession(int numAvatars, int numObstacles, int gridWidth, int gridHeight);
         void gameCycle(int maxCycles, double obstacleActivationDistance);
-        std::vector<GridUnit*> grid;
         std::vector<GridUnit*>& getGrid();
     
     private:
-        vector<GridUnit*> grid;
-        GridUnit units;
+        std::vector<GridUnit*> grid;
+        // GridUnit units;
 
 };
 
 GameSession::GameSession() {
 
-};
+}
+
+std::vector<GridUnit*>& GameSession::getGrid() {
+    return grid;
+}
+
 vector<GridUnit*> GameSession::initGameSession(int numAvatars, int numObstacles, int gridWidth, int gridHeight) {
     Helper he;
     std::tuple<int, int> tempCoor;
@@ -34,7 +38,7 @@ vector<GridUnit*> GameSession::initGameSession(int numAvatars, int numObstacles,
         int x = std::get<0>(he.generateRandomCoordinates(gridWidth, gridHeight));
         int y = std::get<1>(he.generateRandomCoordinates(gridWidth, gridHeight));
         tempGrid->setCoordinates(x, y);
-        units.push_back(tempGrid);
+        grid.push_back(tempGrid);
     }
 
     for (int ObsIn = 0; ObsIn < numObstacles; ObsIn++) {
@@ -42,10 +46,10 @@ vector<GridUnit*> GameSession::initGameSession(int numAvatars, int numObstacles,
         int x = std::get<0>(he.generateRandomCoordinates(gridWidth, gridHeight));
         int y = std::get<1>(he.generateRandomCoordinates(gridWidth, gridHeight));
         tempGrid->setCoordinates(x, y);
-        units.push_back(tempGrid);
+        grid.push_back(tempGrid);
     }
 
-    return units;
+    return grid;
 }
 
 void GameSession::gameCycle(int maxCycles, double obstacleActivationDistance) {
