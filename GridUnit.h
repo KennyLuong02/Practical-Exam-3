@@ -20,7 +20,7 @@ class GridUnit {
 GridUnit::GridUnit() {
     std::get<0>(coordinates) = 0;
     std::get<1>(coordinates) = 0;
-    entity = 'O';
+    entity = 'N';
 }
 
 GridUnit::GridUnit(int x, int y, char entity) {
