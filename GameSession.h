@@ -10,15 +10,21 @@ using namespace std;
 
 class GameSession {
     public:
+        GameSession();
         vector<GridUnit*> initGameSession(int numAvatars, int numObstacles, int gridWidth, int gridHeight);
         void gameCycle(int maxCycles, double obstacleActivationDistance);
+        std::vector<GridUnit*> grid;
+        std::vector<GridUnit*>& getGrid();
     
     private:
-        vector<GridUnit*> units;
-        GridUnit grid;
+        vector<GridUnit*> grid;
+        GridUnit units;
 
 };
 
+GameSession::GameSession() {
+
+};
 vector<GridUnit*> GameSession::initGameSession(int numAvatars, int numObstacles, int gridWidth, int gridHeight) {
     Helper he;
     std::tuple<int, int> tempCoor;

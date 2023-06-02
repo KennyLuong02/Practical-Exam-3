@@ -28,8 +28,8 @@ void Avatar::shift(int dx, int dy) {
     // grid.setCoordinates(x, y);
     // std::get<0>(coor) = x;
     // std::get<1>(coor) = y;
-    std::get<0>(coordinates) = std::get<0>(coordinates) + dy;
-    std::get<1>(coordinates) = std::get<1>(coordinates) + dx;
+    std::get<0>(coordinates) = std::get<0>(coordinates) + dx;
+    std::get<1>(coordinates) = std::get<1>(coordinates) + dy;
 }
 
 #endif
