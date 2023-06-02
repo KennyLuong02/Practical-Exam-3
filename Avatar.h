@@ -11,7 +11,7 @@ class Avatar: public GridUnit {
         void shift(int dx, int dy);
 
     protected:
-        // std::tuple<int, int> coor;
+        std::tuple<int, int> coor;
         GridUnit grid;
 
 };
@@ -28,9 +28,8 @@ void Avatar::shift(int dx, int dy) {
     // grid.setCoordinates(x, y);
     // std::get<0>(coor) = x;
     // std::get<1>(coor) = y;
-    std::tuple<int, int> coor;
-    std::get<0>(coor) = std::get<0>(coor) + dx;
-    std::get<1>(coor) = std::get<1>(coor) + dy;
+    std::get<0>(coor) = std::get<0>(coor) + dy;
+    std::get<1>(coor) = std::get<1>(coor) + dx;
 }
 
 #endif
